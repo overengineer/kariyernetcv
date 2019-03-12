@@ -14,7 +14,8 @@ by_class = '//*[contains(@class,"%s")]'
 
 assert len(sys.argv)==2, "usage: python3 %s [YOUR KARIYER.NET PUBLIC CV URL]" % __file__
 
-page = cached_page(sys.argv[1])
+response = requests.get(sys.argv[1])
+page = html.fromstring(response.content)
 page = page.xpath('//body')[0]
 
 cv = {
