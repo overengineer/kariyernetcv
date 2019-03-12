@@ -1,4 +1,3 @@
-from utils import *
 from lxml import html, etree
 import os,sys
 import requests
